@@ -25,8 +25,8 @@ from nvflare.app_common.widgets.intime_model_selector import IntimeModelSelector
 from nvflare.app_opt.tf.job_config.model import TFModel
 from nvflare.job_config.script_runner import FrameworkType, ScriptRunner
 from nvflare.app_opt.tracking.mlflow.mlflow_receiver import MLflowReceiver
-from nvflare.app_common.widgets.convert_to_fed_event import ConvertToFedEvent
-from nvflare.app_common.tracking.tracker_types import ANALYTIC_EVENT_TYPE
+from nvflare.app_common.widgets.convert_to_fed_event import ConvertToFedEvent #related to mlflow login
+from nvflare.app_common.tracking.tracker_types import ANALYTIC_EVENT_TYPE #related to mlflow login
 
 gpu_devices = tf.config.experimental.list_physical_devices("GPU")
 for device in gpu_devices:
