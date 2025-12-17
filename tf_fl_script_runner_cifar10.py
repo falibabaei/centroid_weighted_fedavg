@@ -162,6 +162,7 @@ if __name__ == "__main__":
     convert_to_fed_event = ConvertToFedEvent(events_to_convert=[ANALYTIC_EVENT_TYPE])
     # Add clients
     for i, train_idx_path in enumerate(train_idx_paths):
+        job.to(id="event_to_fed", obj=convert_to_fed_event, target=f"site-{i + 1}")
         curr_task_script_args = task_script_args + f" --train_idx_path {train_idx_path}"
         executor = ScriptRunner(
             script=train_script, script_args=curr_task_script_args, framework=FrameworkType.TENSORFLOW
